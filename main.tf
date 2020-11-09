@@ -43,12 +43,11 @@ resource "azurerm_postgresql_server" "instance" {
           retention_days             = var.log_retention_days
       }
   }
-
 }
 
 # Diagnostic setting
 module "ds_postgresql_server" {
-  source                          = "git@github.com:openrba/terraform-azurerm-monitor-diagnostic-setting.git"
+  source                          = "github.com/faraday23/terraform-azurerm-monitor-diagnostic-setting.git"
   storage_account                 = var.storage_endpoint
   sa_resource_group               = var.storage_account_resource_group
   target_resource_id              = azurerm_postgresql_server.instance.id
