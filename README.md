@@ -1,0 +1,1 @@
+# azurerm-postgresql-diagnostic-setting
